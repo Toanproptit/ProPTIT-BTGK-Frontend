@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="indext.css">
+    <script src="https://kit.fontawesome.com/54aabe4c43.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <script src="indext.js"></script>
+    <div class="app">
+        <aside class ="sidebar">
+            <div style="padding-top: 20px; padding-bottom: 30px;">
+                <i class="fa-solid fa-bolt-lightning fa-2xl" style="color: #6c31c4;"></i>
+                <p style="color: antiquewhite;">Trọng Toàn</p>
+            </div>
+            <div class="menu-item" >
+                <i class="fa-solid fa-house fa-2xl" style="color: #FFD43B;"></i>
+                <i class="fa-solid fa-location-dot fa-2xl" style="color: #FFD43B;"></i>
+                <i class="fa-solid fa-globe fa-2xl" style="color: #FFD43B;"></i>
+                <i class="fa-solid fa-suitcase fa-2xl" style="color: #FFD43B;"></i>
+                <i class="fa-solid fa-gear fa-2xl" style="color: #FFD43B;"></i>
+            </div>
+            <div>
+                <i class="fa-solid fa-arrow-right-from-bracket fa-fade fa-2xl" style="color: #e2e6ee;"></i>
+            </div>
+        </aside>
+
+        <div class="main-contend">
+            <header class="topbar">
+                <div style="position: relative; display: inline-block;">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" name="searchInput" id="search" placeholder="Search...">
+                </div>
+                <div class="dropdown">
+                    <div class="user-toggle" onclick="toggleMenu()" style="position: relative;display: inline-block;">
+                        <i class="fa-solid fa-circle-user fa-2xl" style="color: #6c31c4;"></i>
+                        <span>User Name</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="dropdown-menu" id="dropdownMenu">
+                            <a href="#">Profile</a>
+                            <a href="#">Settings</a>
+                            <a href="#">Logout</a>
+                    </div>
+                </div>
+
+            </header>
+            <main class="content">
+                <div class="content-header">
+                    <div class="content-header-cot1">
+                        <button id="location-btn" class="location-btn">
+                            <i class="fa-solid fa-location-dot fa-xl" style="color: #ededed;"></i>
+                            <span>Location</span>
+                        </button>
+                        <!-- <h2 id="day"></h2> -->
+                        <div>
+                            <h1 style="font-weight: 100; margin-bottom: 4px; font-size: 38px; "><span id="day" ></span></h1>
+                            <span id="date" style=" display: block; font-size: 16px;;"></span>
+                        </div>
+                        
+                        <div>
+                            <h1 style="font-weight: 100; margin-bottom: 4px; font-size: 38px;"><span id="temp"></span></h1>
+                            <span id="temp_max+min" style="display: block;font-size: 14px;"></span>
+                        </div>
+                            
+                    </div>
+                    <div class="content-header-cot2">
+                        <i class="fa-regular fa-cloud fa-2xl"></i>
+                    </div>
+                    <div class="content-header-cot3">
+                        <i class="fa-regular fa-cloud fa-xl"></i>
+                        <i class="fa-regular fa-cloud fa-xl"></i>
+                    </div>
+                    <div class="content-header-cot4">
+                        <div style="background-color: white; border-radius: 20px; width: 60px; height: 30px; display: flex; align-items: center; justify-content: space-between; padding: 3px; text-align: right;">
+                            <span style="width: 24px; height: 24px; background-color: black; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">F</span>
+                            <span style="width: 24px; height: 24px; color: black; display: flex; align-items: center; justify-content: center; font-weight: bold;">C</span>
+                        </div>
+                        <div id="weather-info">
+                            <img id="weather-icon" src="" alt="Weather Icon">
+                            <span id="weather-desc"></span>
+                        </div>
+                        <div>
+                            <h1 style="font-weight: 100; margin-bottom: 4px; font-size: 30px;"><span id="main"></span></h1>
+                            <span id="feels_main"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="Today-Highlight">
+                    <div style="background-color: aliceblue;">Chane of Rain</div>
+                    <div>UV index</div>
+                    <div>Wind Status</div>
+                    <div>Humidity</div>
+                </div>
+                <div class="weather-forecast">
+                    <div class="item1">
+                        <div class="iteam1_1">Today/Week</div>
+                        <div class="item1_2">
+                            <div class="day">Monday</div>
+                            <div class="day">Tuesday</div>
+                            <div class="day">Wednesday</div>
+                            <div class="day">Thursday</div>
+                            <div class="day">Friday</div>
+                            <div class="day">Saturday</div>
+                            <div class="day">Sunday</div>
+                        </div>
+                    </div>
+                    
+                    <div class="item2">B</div>
+                    <div class="item3">C</div> <!-- Gộp hàng ở cột 2 -->
+                </div>
+                <div class="other-cites">
+                    <div>USA</div>
+                    <div>VietNam</div>
+                    <div>China</div>
+                    <div>Cada</div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
