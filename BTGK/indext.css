@@ -142,22 +142,24 @@
 }
 .weather-forecast {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto auto;  
     gap: 10px;
     background-color: #282c2f;
     border-radius: 20px;
     padding: 20px;
-    height: 270px;
+    height: 31s0px;
 }
+
+
 .weather-forecast > div:not(.item1) {
     background: #ffffff22;
     padding: 15px;
     color: white;
     text-align: center;
     border-radius: 10px;
-    /* height: 100px; */
 }
+
 
 .item1 {
     color: white;
@@ -166,27 +168,70 @@
     grid-column: 1;
     grid-row: 1;
 }
-.item1_1{ 
-  text-align: left;
-}
-.item1_2{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  background: #ffffff22;
-  border-radius: 10px;
-  color: white;
-  padding-top: 20px;
-}
-.item2 {
-  grid-column: 2;
-  grid-row: span 2; /* Gộp 2 hàng */
+
+.item1_1 { 
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 16px;
 }
 
-.item3{
-  grid-column: 1;
-  grid-row: 2;
+.item1_2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: #ffffff22;
+    border-radius: 15px;
+    color: white;
+    gap: 10px;
+    padding: 10px;
+    overflow-x: auto; /* Cho phép cuộn nếu không đủ chỗ */
 }
+
+.day {
+    border-radius: 12px;
+    display: flex;
+    border: 1px solid white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    min-width: 55px; /* Đảm bảo không quá bé */
+    font-size: 16px;
+}
+
+.day img {
+    width: 50px;
+    height: 50px;
+}
+
+.item2 {
+    grid-column: 2;
+    grid-row: span 2; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.item3 {
+    display: flex;
+    border-radius: 20px;
+    /* align-items: center;
+    justify-content: center; */
+    font-size: 18px;
+}
+.iteam3_2{
+  font-size: 20px;
+  width: 15%;
+  text-align: center;
+  padding-right: 250px;
+}
+
+.iteam3_3{
+  margin-top: auto;
+  margin-bottom: auto; 
+}
+
 .other-cites{
     border-radius: 20px;
     display: grid;
@@ -211,4 +256,13 @@
     color: #FFD43B;
     gap: 50px;
     padding-bottom: 320px;
+}
+
+.img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.icon{
+  font-size: 100px;
 }
