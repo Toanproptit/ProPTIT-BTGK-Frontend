@@ -131,14 +131,33 @@
 }
 
 .Today-Highlight{
-    background-color: #41464f;
+  padding: 20px;
+  background-color: #282c2f;
+  border-radius: 20px;
+  width: 93%;
+}
+
+.Today-Highlight p{
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+.Today-Highlight-content{
     border-radius: 20px;
     display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    justify-content: center;
-    align-items: center;
+    gap: 40px;
+    grid-template-columns: 48% 48%;
+    grid-template-rows: 42% 42%;
+    height: 80%;
+  }
+.Today-Highlight-content>div{
+  text-align: left;
+  padding-left: 15px;
+  background-color: #41464f;
+  color: #fff;
+  height: 100%;
+  width: 90%;
+  border-radius: 20px;
 }
 .weather-forecast {
     display: grid;
@@ -148,7 +167,7 @@
     background-color: #282c2f;
     border-radius: 20px;
     padding: 20px;
-    height: 31s0px;
+    /* height: 310px; */
 }
 
 
@@ -233,18 +252,38 @@
 }
 
 .other-cites{
-    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.other-cites1{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #fff;
+  padding: 30px 30px; 
+}
+.other-cites2{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 10px;
+    gap: 20px; /* khoảng cách giữa các card */
+    padding: 0 20px; /* khoảng cách 2 bên */
     justify-content: center;
     align-items: center;
 }
-.other-cites > div {
-    background-color: #282c2f;
-    color: white;
+
+
+.other-cites2>div{
+  color: white;
+  display: flex;
+  flex-direction: row;
+  background-color: #282c2f;
+  border-radius: 15px;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
 }
+
 .menu-item {
     display: flex;
     flex-direction: column;
