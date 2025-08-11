@@ -8,7 +8,12 @@
     <script src="https://kit.fontawesome.com/54aabe4c43.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="indext.js"></script>
+
+<!-- Hiển thị animation -->
+    
+
     <div class="app">
         <aside class ="sidebar">
             <div style="padding-top: 20px; padding-bottom: 30px;">
@@ -22,7 +27,6 @@
                 <i class="fa-solid fa-suitcase fa-2xl" style="color: #FFD43B;"></i>
                 <i class="fa-solid fa-gear fa-2xl" style="color: #FFD43B;"></i>
             </div>
-
             <div>
                 <i class="fa-solid fa-arrow-right-from-bracket fa-fade fa-2xl" style="color: #e2e6ee;"></i>
             </div>
@@ -53,7 +57,7 @@
                     <div class="content-header-cot1">
                         <button id="location-btn" class="location-btn">
                             <i class="fa-solid fa-location-dot fa-xl" style="color: #ededed;"></i>
-                            <span>Location</span>
+                            <span id="country"></span>
                         </button>
                         <!-- <h2 id="day"></h2> -->
                         <div>
@@ -90,10 +94,25 @@
                     </div>
                 </div>
                 <div class="Today-Highlight">
-                    <div style="background-color: aliceblue;">Chane of Rain</div>
-                    <div>UV index</div>
-                    <div>Wind Status</div>
-                    <div>Humidity</div>
+                    
+                        <p>Today Highlight</p>
+                        <div class="Today-Highlight-content">       
+                            <div>
+                                Chane of Rain
+                                <lottie-player 
+                                    src="./AnimationJSON/Graph Baby Blue.json"  
+                                    background="transparent"  
+                                    speed="1"  
+                                    style="width: 90%; height: 90%;"  
+                                    loop  
+                                    autoplay>
+                                </lottie-player>
+                            </div>
+                            <div>UV index</div>
+                            <div>Wind Status</div>
+                            <div>Humidity</div>
+                        </div>
+                   
                 </div>
                 <div class="weather-forecast">
                     <div class="item1">
@@ -138,17 +157,17 @@
                     </div>
                     
                     <div class="item2">
-                        <p>SunRise</p>
+                        <p style="color: #24262e;">SunRise</p>
                         <div class="sunRise">
-                            <span id="sunrise"></span>
+                            <span style="font-size: 20px;" id="sunrise"></span>
                         </div>
-                        <p>SunSet</p>
+                        <p style="color: #24262e;">SunSet</p>
                         <div class="sunSet">
-                            <span id="sunset"></span>
+                            <span style="font-size: 20px;" id="sunset"></span>
                         </div>
-                        <p>lengthf the day</p>
+                        <p style="color: #24262e;">lengthf the day</p>
                         <div class="lengthftheday">
-                            <span id="lengthftheday"></span>
+                            <span style="font-size: 20px;" id="lengthftheday"></span>
                         </div>
                     </div>
                         <div class="item3">
@@ -165,10 +184,60 @@
                         </div> 
                 </div>
                 <div class="other-cites">
-                    <div>USA</div>
-                    <div>VietNam</div>
-                    <div>China</div>
-                    <div>Cada</div>
+                    <div class="other-cites1">
+                        <div style="font-size: 20px; ;">Other Cities</div>
+                        <label style="border-radius: 10px; background-color: #424553;" for="">Show All</label>
+                    </div>
+                    <div class="other-cites2">
+                            <div class="other-cites2_1">
+                                <div>
+                                    <p style="font-size: 20px;" id="temp-USA"></p>
+                                    <p>USA</p>
+                                </div>
+                                <div>
+                                    <span id="temp-max-min-USA"></span>
+                                </div>
+                                <div>
+                                    <img id="icon-USA">
+                                </div>
+                            </div>
+                            <div class="other-cites2_2">
+                                <div>
+                                    <p style="font-size: 20px;" id="temp-Dubai"></p>
+                                    <p>Dubai</p>
+                                </div>
+                                <div>
+                                    <span id="temp-max-min-Dubai"></span>
+                                </div>
+                                <div>
+                                    <img id="icon-Dubai">
+                                </div>
+                            </div>
+                            <div class="other-cites2_3">
+                               <div>
+                                    <p style="font-size: 20px;" id="temp-China"></p>
+                                    <p>China</p>
+                                </div>
+                                <div>
+                                    <span id="temp-max-min-China"></span>
+                                </div>
+                                <div>
+                                    <img id="icon-China">
+                                </div>
+                            </div>
+                            <div class="other-cites2_4">
+                                <div>
+                                    <p style="font-size: 20px;" id="temp-Canada"></p>
+                                    <p>Canada</p>
+                                </div>
+                                <div>
+                                    <span id="temp-max-min-Canada"></span>
+                                </div>
+                                <div>
+                                    <img id="icon-Canada">
+                                </div>
+                            </div>
+                    </div>
                 </div>
             </main>
         </div>
