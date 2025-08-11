@@ -9,7 +9,7 @@
 </head>
 <body>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <script src="indext.js"></script>
+    <script src="indext.js" defer></script>
 
 <!-- Hiển thị animation -->
     
@@ -21,14 +21,36 @@
                 <p style="color: antiquewhite;">Trọng Toàn</p>
             </div>
             <div class="menu-item" >
-                <i class="fa-solid fa-house fa-2xl" style="color: #FFD43B;"></i>
-                <i class="fa-solid fa-location-dot fa-2xl" style="color: #FFD43B;"></i>
-                <i class="fa-solid fa-globe fa-2xl" style="color: #FFD43B;"></i>
-                <i class="fa-solid fa-suitcase fa-2xl" style="color: #FFD43B;"></i>
-                <i class="fa-solid fa-gear fa-2xl" style="color: #FFD43B;"></i>
+                <div class="icon_wrapper">
+                    <i class="fa-solid fa-house fa-2xl" style="color: #43434e;"></i>
+                    
+                </div>
+                <div class="icon_wrapper">
+                    <i class="fa-solid fa-location-dot fa-2xl" style="color: #43434e;"></i>
+
+                </div>
+                <div class="icon_wrapper">
+                    <i class="fa-solid fa-globe fa-2xl" style="color: #43434e;"></i>
+
+                </div>
+                <div class="icon_wrapper">
+                    <i class="fa-solid fa-suitcase fa-2xl" style="color: #43434e;;"></i>
+
+                </div>
+                <div class="icon_wrapper">
+                    <i class="fa-solid fa-gear fa-2xl" style="color: #43434e;"></i>
+
+                </div>
+            </div>  
+            <div class="outApp">
+                <i class="fa-solid fa-arrow-right-from-bracket fa-fade fa-2xl" style="color: #e2e6ee;"></i>
             </div>
             <div>
-                <i class="fa-solid fa-arrow-right-from-bracket fa-fade fa-2xl" style="color: #e2e6ee;"></i>
+                <button id="theme-toggle">
+                   <i id="icon-moon" class="fa-solid fa-moon fa-2xl"></i>
+
+                    <i id="icon-sun" class="fa-solid fa-sun fa-2xl"></i>
+                </button>
             </div>
         </aside>
 
@@ -36,7 +58,7 @@
             <header class="topbar">
                 <div style="position: relative; display: inline-block;">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" name="searchInput" id="search" placeholder="Search...">
+                    <input type="text" name="searchInput" id="searchInput" placeholder="Search...">
                 </div>
                 <div class="dropdown">
                     <div class="user-toggle" onclick="toggleMenu()" style="position: relative;display: inline-block;">
@@ -59,7 +81,7 @@
                             <i class="fa-solid fa-location-dot fa-xl" style="color: #ededed;"></i>
                             <span id="country"></span>
                         </button>
-                        <!-- <h2 id="day"></h2> -->
+                        
                         <div>
                             <h1 style="font-weight: 100; margin-bottom: 4px; font-size: 38px; "><span id="day" ></span></h1>
                             <span id="date" style=" display: block; font-size: 16px;;"></span>
@@ -75,8 +97,14 @@
                         <i class="fa-regular fa-cloud fa-2xl"></i>
                     </div>
                     <div class="content-header-cot3">
-                        <i class="fa-regular fa-cloud fa-xl"></i>
-                        <i class="fa-regular fa-cloud fa-xl"></i>
+                        <lottie-player
+                            src="./AnimationJSON/nodata.json"
+                            background="transparent"
+                            speed = "1"
+                            style="width: 90%; height: 90%;"
+                            loop
+                            autoplay>
+                        </lottie-player>
                     </div>
                     <div class="content-header-cot4">
                         <div style="background-color: white; border-radius: 20px; width: 60px; height: 30px; display: flex; align-items: center; justify-content: space-between; padding: 3px; text-align: right;">
@@ -108,9 +136,38 @@
                                     autoplay>
                                 </lottie-player>
                             </div>
-                            <div>UV index</div>
-                            <div>Wind Status</div>
-                            <div>Humidity</div>
+                            <div>
+                                UV index
+                                <lottie-player
+                                    src="./AnimationJSON/uv index.json"
+                                    background="transparent"
+                                    speed = "1"
+                                    style="width: 90%; height: 90%;"
+                                    loop
+                                    autoplay>
+                                </lottie-player>
+                                
+                            </div>
+                            <div>Wind Status
+                                <lottie-player
+                                    src="./AnimationJSON/Graph.json"
+                                    background="transparent"
+                                    speed = "1"
+                                    style="width: 90%; height: 90%;"
+                                    loop
+                                    autoplay>
+                                </lottie-player>
+                            </div>
+                            <div>Humidity
+                                <lottie-player
+                                    src="./AnimationJSON/windy icon.json"
+                                    background="transparent"
+                                    speed = "1"
+                                    style="width: 90%; height: 90%;"
+                                    loop
+                                    autoplay>
+                                </lottie-player>
+                            </div>
                         </div>
                    
                 </div>
@@ -157,15 +214,15 @@
                     </div>
                     
                     <div class="item2">
-                        <p style="color: #24262e;">SunRise</p>
+                        <p style="color: #676B73;">SunRise</p>
                         <div class="sunRise">
                             <span style="font-size: 20px;" id="sunrise"></span>
                         </div>
-                        <p style="color: #24262e;">SunSet</p>
+                        <p style="color: #676B73;">SunSet</p>
                         <div class="sunSet">
                             <span style="font-size: 20px;" id="sunset"></span>
                         </div>
-                        <p style="color: #24262e;">lengthf the day</p>
+                        <p style="color: #676B73;">lengthf the day</p>
                         <div class="lengthftheday">
                             <span style="font-size: 20px;" id="lengthftheday"></span>
                         </div>
@@ -191,7 +248,7 @@
                     <div class="other-cites2">
                             <div class="other-cites2_1">
                                 <div>
-                                    <p style="font-size: 20px;" id="temp-USA"></p>
+                                    <p style="font-size: 30px;" id="temp-USA"></p>
                                     <p>USA</p>
                                 </div>
                                 <div>
@@ -203,7 +260,7 @@
                             </div>
                             <div class="other-cites2_2">
                                 <div>
-                                    <p style="font-size: 20px;" id="temp-Dubai"></p>
+                                    <p style="font-size: 30px;" id="temp-Dubai"></p>
                                     <p>Dubai</p>
                                 </div>
                                 <div>
@@ -215,7 +272,7 @@
                             </div>
                             <div class="other-cites2_3">
                                <div>
-                                    <p style="font-size: 20px;" id="temp-China"></p>
+                                    <p style="font-size: 30px;" id="temp-China"></p>
                                     <p>China</p>
                                 </div>
                                 <div>
@@ -227,14 +284,14 @@
                             </div>
                             <div class="other-cites2_4">
                                 <div>
-                                    <p style="font-size: 20px;" id="temp-Canada"></p>
-                                    <p>Canada</p>
+                                    <p style="font-size: 30px;" id="temp-Nam-Định"></p>
+                                    <p>Nam Định</p>
                                 </div>
                                 <div>
-                                    <span id="temp-max-min-Canada"></span>
+                                    <span id="temp-max-min-Nam-Định"></span>
                                 </div>
                                 <div>
-                                    <img id="icon-Canada">
+                                    <img id="icon-Nam-Định">
                                 </div>
                             </div>
                     </div>
