@@ -13,7 +13,7 @@
 }
 
 body.light-mode {
-  --background-color: white;
+  --background-color: rgb(22, 120, 218);
 }
 
 body {
@@ -196,7 +196,7 @@ body.light-mode #icon-sun {
 .content{
     display: grid;
     grid-template-columns: 53% 47% ;
-    grid-template-rows: 40% 40%;
+    grid-template-rows: 40% 40%;  
     /* background-color: #420e79; */
     gap:10px 10px;
 }
@@ -223,6 +223,13 @@ body.light-mode #icon-sun {
   }
   .menu-item{
     padding-bottom: 1300px;
+  }
+  .topbar{
+    width: 100%;
+    position: fixed;
+  }
+  .dropdown-menu{
+    right: 130px;
   }
 }
 
@@ -281,7 +288,7 @@ body.light-mode #icon-sun {
 .Today-Highlight-content{
     border-radius: 20px;
     display: grid;
-    gap: 40px;
+    gap:40px;
     grid-template-columns: 48% 48%;
     grid-template-rows: 48% 48%;
     height: 80%;

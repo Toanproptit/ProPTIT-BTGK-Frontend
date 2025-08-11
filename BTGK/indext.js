@@ -4,12 +4,6 @@ function toggleMenu() {
 }
 
 
-const countries = {
-  VN: "Vietnam",
-  US: "United States",
-  JP: "Japan",
-  // thêm các nước khác
-};
 
 
 const API_KEY = "d2061f4a074a6516611f7d121428db0a"; // Thay bằng API key từ OpenWeatherMap
@@ -160,9 +154,10 @@ function toggleTheme() {
 
   if (body.classList.contains('light-mode')) {
     localStorage.setItem('theme', 'light');
-  } else {
+  } else {  
     localStorage.setItem('theme', 'dark');
   }
+
 }
 
 themeToggleButton.addEventListener('click', toggleTheme);
