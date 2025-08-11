@@ -29,9 +29,9 @@ async function success(position) {
   const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   const today = days[date.getDay()];
 
-  const countryUrl = data.sys.country;
+  const countryUrl = data.sys.name;
   
-  document.getElementById("country").textContent = countries[countryUrl]||countryUrl;
+  document.getElementById("country").textContent = `${data.name}`;
   document.getElementById("day").textContent = `${today}`;
   document.getElementById("date").textContent = `${date.toLocaleDateString()}`;
   document.getElementById("temp").textContent = `${data.main.temp}°C`;
@@ -87,7 +87,7 @@ const cities = [
   { name: "USA", query: "New York,US" },
   { name: "Dubai", query: "Dubai,AE" },
   { name: "China", query: "Beijing,CN" },
-  { name: "Canada", query: "Toronto,CA" }
+  { name: "Nam-Định", query: "Nam Dinh,VN" }
 ];
 
 async function getWeather(cityQuery) {
@@ -110,3 +110,65 @@ async function loadAllCities() {
 }
 
 loadAllCities();
+
+document.getElementById("searchInput").addEventListener("keydown",async function (event) {
+  if(event.key=="Enter"){
+    const cityName = this.value.trim();
+    if(!cityName)return;
+
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric`;
+    const response = await fetch(url);
+    const data = await response.json();
+
+    if(data.cod == 200){
+       document.getElementById("country").textContent = `${data.name}`;
+      document.getElementById("day").textContent = new Date().toLocaleDateString("en-US", { weekday: "long" });
+      document.getElementById("date").textContent = new Date().toLocaleDateString();
+      document.getElementById("temp").textContent = `${data.main.temp}°C`;
+      document.getElementById("temp_max+min").textContent = `High: ${data.main.temp_max} Low: ${data.main.temp_min}`;
+      document.getElementById("main").textContent = data.weather[0].main;
+      document.getElementById("weather-icon").src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+
+       const sunRise = data.sys.sunrise;
+        const sunRiseDate = new Date(sunRise*1000);
+        const sunRiseTime = sunRiseDate.toLocaleTimeString("en-US",{hour: "2-digit",minute: "2-digit",hour12:true});
+      
+        const sunSet = data.sys.sunset;
+        const sunSetDate = new Date(sunSet*1000);
+        const sunSetTime = sunSetDate.toLocaleTimeString("en-US",{hour: "2-digit",minute: "2-digit",hour12:true});
+
+        const dayLengthOfDay = sunSet-sunRise
+        const hours = Math.floor(dayLengthOfDay/3600);
+        const minute = Math.floor((dayLengthOfDay%3600)/60)
+
+      document.getElementById("lengthftheday").textContent = `${hours}h ${minute}m`;
+      document.getElementById("sunset").textContent = `${sunSetTime}`;
+      document.getElementById("sunrise").textContent = ` ${sunRiseTime}`;
+    }
+    else{
+      alert("Không tìm thấy thành phố này!!!");
+    }
+  }
+});
+
+
+const themeToggleButton = document.getElementById('theme-toggle');
+const body = document.body;
+
+function toggleTheme() {
+  body.classList.toggle('light-mode');
+
+  if (body.classList.contains('light-mode')) {
+    localStorage.setItem('theme', 'light');
+  } else {
+    localStorage.setItem('theme', 'dark');
+  }
+}
+
+themeToggleButton.addEventListener('click', toggleTheme);
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('theme') === 'light') {
+        body.classList.add('light-mode');
+    }
+});
