@@ -211,7 +211,7 @@ body.light-mode #icon-sun {
   /* .topbar{
     grid-template-columns: 96%;
     grid-template-rows: 1fr;
-  } */
+  } */  
   .app {
     display: grid;
     grid-template-columns: 60px 90%;
