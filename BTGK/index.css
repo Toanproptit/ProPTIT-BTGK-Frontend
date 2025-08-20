@@ -125,12 +125,7 @@ body.light-mode #icon-sun {
 }
 
 
-.main-content {
-  display: grid;
-  background-color: #fff;
-  padding: 1rem;
-  gap: 10px;    
-}
+
 
 .topbar {
   display: grid;
